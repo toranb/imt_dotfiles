@@ -41,6 +41,7 @@ set nocompatible
 " }2
 " Github repos for bundles that we want to have installed {2
 "-----------------------------------------------------------------------------------
+ Bundle 'https://github.com/bkad/CamelCaseMotion'
  Bundle 'https://github.com/Shougo/neocomplcache.vim'
  Bundle 'https://github.com/Raimondi/delimitMate'
  Bundle 'https://github.com/vim-scripts/L9'
@@ -449,6 +450,18 @@ augroup unimpaired_paste
         \   unlet s:paste |
         \ endif
 augroup END
+" }2
+" CamelCaseMotion {2
+"-----------------------------------------------------------------------------------
+map <silent> W <Plug>CamelCaseMotion_w
+map <silent> E <Plug>CamelCaseMotion_e
+map <silent> B <Plug>CamelCaseMotion_b
+omap <silent> iW <Plug>CamelCaseMotion_iw
+xmap <silent> iW <Plug>CamelCaseMotion_iw
+omap <silent> iE <Plug>CamelCaseMotion_ie
+xmap <silent> iE <Plug>CamelCaseMotion_ie
+omap <silent> iB <Plug>CamelCaseMotion_ib
+xmap <silent> iB <Plug>CamelCaseMotion_ib
 " }2
 " Increment a column of number {2
 "-----------------------------------------------------------------------------------
