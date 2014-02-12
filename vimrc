@@ -264,10 +264,13 @@ let g:syntastic_javascript_checkers = ['jshint']  " sets jshint as our javascrip
 " Ignore line width for syntax checking in python
 let g:syntastic_python_flake8_post_args='--ignore=E501'
 let g:syntastic_filetype_map = { 'handlebars.html': 'handlebars' }
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': [],
+                     \ 'passive_filetypes': ['html', 'handlebars'] }
 " }2
 " Neocomplcache configurations {2
 "-----------------------------------------------------------------------------------
-let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_enable_at_startup=0
 " To make compatible with jedi
 let g:jedi#auto_vim_configuration = 0
 if !exists('g:neocomplcache_force_omni_patterns')
