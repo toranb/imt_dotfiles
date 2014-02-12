@@ -547,7 +547,7 @@ map <Leader>fs :CtrlPTag<CR>
 map <Leader>fd :CtrlPCurFile<CR>
 map <Leader>fb :CtrlPBuffer<CR>
 nmap <Leader><Leader> <c-^>
-map <Leader>q :!grunt test<CR>
+nnoremap <Leader>q :call QuickfixToggle()<CR>
 nnoremap <Leader>ed <C-w><C-v><C-l>:e $MYVIMRC<CR>
 let g:EasyMotion_leader_key = '<Leader>l'
 map <Leader>rf :call RenameFile()<CR>
