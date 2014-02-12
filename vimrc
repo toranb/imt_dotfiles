@@ -73,6 +73,7 @@ set nocompatible
  Bundle 'https://github.com/JarrodCTaylor/vim-shell-executor'
  Bundle 'https://github.com/epeli/slimux'
  Bundle 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
+ Bundle 'https://github.com/mattn/emmet-vim/'
 " }2
 " }1
 
@@ -367,6 +368,13 @@ nmap F <Plug>SneakBackward
 let g:sneak#streak = 1
 " We need 52 characters for this
 let g:sneak#target_labels = "sfgkqwetyupzcvbnmSDFGHJKLQWERTYUPZXCVBNM1234567890rx"
+"}2
+" Emmet Vim {2
+"-----------------------------------------------------------------------------------
+" Enable just in html files
+let g:user_emmet_install_global = 0
+autocmd FileType html,htmldjango,handlebars EmmetInstall
+let g:user_emmet_leader_key='<Leader>'
 "}2
 " }1
 
