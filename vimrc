@@ -271,7 +271,7 @@ let g:syntastic_mode_map={ 'mode': 'active',
 " }2
 " Neocomplcache configurations {2
 "-----------------------------------------------------------------------------------
-let g:neocomplcache_enable_at_startup=0
+let g:neocomplcache_enable_at_startup=1
 " To make compatible with jedi
 let g:jedi#auto_vim_configuration = 0
 if !exists('g:neocomplcache_force_omni_patterns')
@@ -279,6 +279,8 @@ if !exists('g:neocomplcache_force_omni_patterns')
   endif
 let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
 let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_auto_completion_start_length = 99
+set completeopt-=preview
 " }2
 " Ctrlp configurations {2
 "-----------------------------------------------------------------------------------
