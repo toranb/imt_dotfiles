@@ -2,27 +2,27 @@
 # You must delete all existing *zsh*, *vim* and *tmux* files and directories
 # in your home folder for these new files to work
 ##
-rm -rf ~/.tmux
-rm -rf ~/.zsh-custom
-rm -rf ~/.gemrc
-rm -rf ~/.gitignore
-rm -rf ~/.gitmodules
-rm -rf ~/.gvimrc
-rm -rf ~/.vimrc
-rm -rf ~/.viminfo
-rm -rf ~/.vim
-rm -rf ~/.oh-my-zsh
-rm -rf ~/.slate
-rm -rf ~/.tmux.conf
-rm -rf ~/.zshrc
-rm -rf ~/.gitconfig
-rm -rf ~/.zsh_prompt
-rm -rf ~/.zsh-syntax-highlighting.zsh
-rm -rf ~/highlighters
-rm -rf ~/.ackrc
-rm -rf ~/README
-rm -rf ~/.antigen
-rm -rf ~/.antigen.zsh
+sudo rm -rf ~/.tmux > /dev/null 2>&1
+sudo rm -rf ~/.zsh-custom > /dev/null 2>&1
+sudo rm -rf ~/.gemrc > /dev/null 2>&1
+sudo rm -rf ~/.gitignore > /dev/null 2>&1
+sudo rm -rf ~/.gitmodules > /dev/null 2>&1
+sudo rm -rf ~/.gvimrc > /dev/null 2>&1
+sudo rm -rf ~/.vimrc > /dev/null 2>&1
+sudo rm -rf ~/.viminfo > /dev/null 2>&1
+sudo rm -rf ~/.vim > /dev/null 2>&1
+sudo rm -rf ~/.oh-my-zsh > /dev/null 2>&1
+sudo rm -rf ~/.slate > /dev/null 2>&1
+sudo rm -rf ~/.tmux.conf > /dev/null 2>&1
+sudo rm -rf ~/.zshrc > /dev/null 2>&1
+sudo rm -rf ~/.gitconfig > /dev/null 2>&1
+sudo rm -rf ~/.zsh_prompt > /dev/null 2>&1
+sudo rm -rf ~/.zsh-syntax-highlighting.zsh > /dev/null 2>&1
+sudo rm -rf ~/highlighters > /dev/null 2>&1
+sudo rm -rf ~/.ackrc > /dev/null 2>&1
+sudo rm -rf ~/README > /dev/null 2>&1
+sudo rm -rf ~/.antigen > /dev/null 2>&1
+sudo rm -rf ~/.antigen.zsh > /dev/null 2>&1
 
 
 # Symlink the new config files. Assumes files are saved in ~/imt_dotfiles
@@ -38,6 +38,7 @@ ln -s ~/imt_dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/imt_dotfiles/ackrc ~/.ackrc
 ln -s ~/imt_dotfiles/gitconfig ~/.gitconfig
 ls -s ~/imt_dotfiles/gemrc ~/.gemrc
+ls -s ~/imt_dotfiles/psqlrc ~/.psqlrc
 
 # If vundle doesn't exist clone it so we can update vim plugins
 if [ ! -d ~/imt_dotfiles/vim/bundle/vundle ]; then
