@@ -263,7 +263,6 @@ let g:syntastic_loc_list_height=5                 " the height of the error list
 let g:syntastic_python_checkers = ['flake8']      " sets flake8 as the default for checking python files
 let g:syntastic_javascript_checkers = ['jshint']  " sets jshint as our javascript linter
 " Ignore line width for syntax checking in python
-let g:syntastic_python_flake8_post_args='--ignore=E501'
 let g:syntastic_filetype_map = { 'handlebars.html': 'handlebars' }
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
