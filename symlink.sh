@@ -23,6 +23,7 @@ sudo rm -rf ~/.ackrc > /dev/null 2>&1
 sudo rm -rf ~/README > /dev/null 2>&1
 sudo rm -rf ~/.antigen > /dev/null 2>&1
 sudo rm -rf ~/.antigen.zsh > /dev/null 2>&1
+sudo rm -rf ~/.config > /dev/null 2>&1
 
 
 # Symlink the new config files. Assumes files are saved in ~/imt_dotfiles
@@ -37,8 +38,9 @@ ln -s ~/imt_dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/imt_dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/imt_dotfiles/ackrc ~/.ackrc
 ln -s ~/imt_dotfiles/gitconfig ~/.gitconfig
-ls -s ~/imt_dotfiles/gemrc ~/.gemrc
-ls -s ~/imt_dotfiles/psqlrc ~/.psqlrc
+ln -s ~/imt_dotfiles/config ~/.config
+ln -s ~/imt_dotfiles/gemrc ~/.gemrc
+ln -s ~/imt_dotfiles/psqlrc ~/.psqlrc
 
 # If vundle doesn't exist clone it so we can update vim plugins
 if [ ! -d ~/imt_dotfiles/vim/bundle/vundle ]; then
