@@ -541,7 +541,7 @@ command! -range FormatJSON call FormatJSON()
 
 " Key Bindings For The Others (Everyone who is not Jarrod) AT IMT {1
 "===================================================================================
-let mapleader=","
+let mapleader=" "
 nnoremap <Leader>ff :CtrlP<CR>
 noremap <Leader>sp :set spell spelllang=en_us<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
