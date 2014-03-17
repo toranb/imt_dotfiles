@@ -376,7 +376,7 @@ let g:sneak#target_labels = "sfgkqwetyupzcvbnmSDFGHJKLQWERTYUPZXCVBNM1234567890r
 " Enable just in html files
 let g:user_emmet_install_global = 0
 autocmd FileType html,htmldjango,handlebars EmmetInstall
-let g:user_emmet_leader_key='<Leader>'
+let g:user_emmet_leader_key=','
 "}2
 " }1
 
