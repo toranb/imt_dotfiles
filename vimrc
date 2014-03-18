@@ -44,7 +44,6 @@ set nocompatible
  Bundle 'https://github.com/bkad/CamelCaseMotion'
  Bundle 'https://github.com/Shougo/neocomplcache.vim'
  Bundle 'https://github.com/Raimondi/delimitMate'
- Bundle 'https://github.com/vim-scripts/L9'
  Bundle 'https://github.com/scrooloose/nerdtree'
  Bundle 'https://github.com/JarrodCTaylor/vim-256-color-schemes'
  Bundle 'https://github.com/tpope/vim-fugitive'
@@ -74,6 +73,9 @@ set nocompatible
  Bundle 'https://github.com/epeli/slimux'
  Bundle 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
  Bundle 'https://github.com/mattn/emmet-vim/'
+ Bundle 'https://github.com/osyo-manga/vim-over'
+ Bundle 'https://github.com/groenewege/vim-less'
+ Bundle 'https://github.com/nathanaelkane/vim-indent-guides'
 " }2
 " }1
 
@@ -101,7 +103,7 @@ set autoindent                         " Copy indent from current line
 set autoread                           " Read open files again when changed outside Vim
 set autowrite                          " Write a modified buffer on each :next , ...
 set backspace=indent,eol,start         " Backspacing over everything in insert mode
-set history=50                         " Keep 50 lines of command line history
+set history=200                        " Keep 200 lines of command line history
 set hlsearch                           " Highlight the last used search pattern
 set incsearch                          " Do incremental searching
 "set list                              " Toggle manually with set list / set nolist or set list!
@@ -166,6 +168,11 @@ if has("autocmd")
   au BufNewFile,BufRead *.{mustache,handlebars,hbs}{,.erb} set filetype=html syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
 endif
 
+" }2
+" Abbreviations {2
+"-----------------------------------------------------------------------------------
+:iabbr teh the
+:iabbr condole console
 " }2
 " Make arrowkey resize viewports {2
 "-----------------------------------------------------------------------------------
@@ -244,6 +251,9 @@ nnoremap <Leader>es :ExecuteSelection<CR>
 nnoremap <Leader>ja :RunAllQunitTests<CR>
 nnoremap <Leader>jt :RunSingleQunitTest<CR>
 nnoremap <Leader>jm :RunSingleQunitModule<CR>
+inoremap <Leader>w <Esc>:wa<CR>
+nnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/
+xnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/\%V
 nnoremap Y y$
 " --- Shortcuts for quickfix as it was broken for some reason
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> :.cc<CR>
@@ -378,6 +388,15 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,htmldjango,handlebars EmmetInstall
 let g:user_emmet_leader_key=','
 "}2
+" Indent Guides {2
+"-------------------------------------------------------------------------
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=249
+" }2
 " }1
 
 " Misc Functions {1
@@ -506,7 +525,7 @@ function! ToggleTodoCheckbox()
         let line = getline('.')
         if(match(line, "\\[ \\]") != -1)
           let line = substitute(line, "\\[ \\]", "[√]", "")
-          let line = substitute(line, "$", " @done (" . strftime("%d/%m/%y %H:%M") . ")", "")
+          let line = substitute(line, "$", " @done (" . strftime("%m/%d/%y %H:%M") . ")", "")
         elseif(match(line, "\\[√\\]") != -1)
           let line = substitute(line, "\\[√\\]", "[ ]", "")
           let line = substitute(line, " @done.*$", "", "")
