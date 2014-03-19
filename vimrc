@@ -252,8 +252,8 @@ nnoremap <Leader>ja :RunAllQunitTests<CR>
 nnoremap <Leader>jt :RunSingleQunitTest<CR>
 nnoremap <Leader>jm :RunSingleQunitModule<CR>
 inoremap <Leader>w <Esc>:wa<CR>
-nnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/
-xnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/\%V
+nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
+xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 nnoremap Y y$
 " --- Shortcuts for quickfix as it was broken for some reason
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> :.cc<CR>
@@ -556,6 +556,18 @@ function! FormatJSON()
 endfunction
 command! -range FormatJSON call FormatJSON()
 " }2
+" Visual Find and Replace {2
+function! VisualFindAndReplace()
+    :OverCommandLine%s/
+    :w
+endfunction
+" }2
+" Visual Find and Replace With Selection {2
+function! VisualFindAndReplaceWithSelection() range
+    :'<,'>OverCommandLine s/
+    :w
+endfunction
+" }2
 " }1
 
 " Key Bindings For The Others (Everyone who is not Jarrod) AT IMT {1
@@ -590,8 +602,8 @@ inoremap jk <ESC>
 nnoremap<Leader>tn :set relativenumber!<CR>
 nmap<Leader>s ysiw
 nnoremap<Leader>u :GundoToggle<CR>
-nnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/
-xnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/\%V
+nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
+xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
 " --- Emacs keys in insert mode
 " May the programming gods forgive me for these four lines
 imap <C-e> <C-o>$
