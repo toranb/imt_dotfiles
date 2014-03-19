@@ -567,7 +567,7 @@ nnoremap <Leader>tb :TagbarToggle<CR>
 map <Leader>a :Ack!<space>
 map <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>nt :NERDTreeFind<CR>
-map <Leader>ta :DjangoTestApp<CR>
+map <Leader>tw :DjangoTestApp<CR>
 map <Leader>tf :DjangoTestFile<CR>
 map <Leader>tc :DjangoTestClass<CR>
 map <Leader>tm :DjangoTestMethod<CR>
