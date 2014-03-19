@@ -590,6 +590,8 @@ inoremap jk <ESC>
 nnoremap<Leader>tn :set relativenumber!<CR>
 nmap<Leader>s ysiw
 nnoremap<Leader>u :GundoToggle<CR>
+nnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/
+xnoremap <Leader>fr :<c-u>OverCommandLine<cr>%s/\%V
 " --- Emacs keys in insert mode
 " May the programming gods forgive me for these four lines
 imap <C-e> <C-o>$
