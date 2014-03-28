@@ -585,8 +585,10 @@ vmap <silent> <expr> p <sid>Repl()
 " }1
 
 " Key Bindings For The Others (Everyone who is not Jarrod) AT IMT {1
-"===================================================================================
+"============================================================================= ======
 let mapleader=" "
+nnoremap j gj
+nnoremap k gk
 nnoremap <Leader>ff :CtrlP<CR>
 noremap <Leader>sp :set spell spelllang=en_us<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
