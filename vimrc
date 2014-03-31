@@ -23,10 +23,10 @@ set nocompatible
 "===================================================================================
 "
 " Help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install(update) plugins
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused plugins
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
@@ -39,43 +39,44 @@ set nocompatible
  call vundle#rc()
  Bundle 'gmarik/vundle'
 " }2
-" Github repos for bundles that we want to have installed {2
+" Github repos for plugins that we want to have installed {2
 "-----------------------------------------------------------------------------------
- Bundle 'https://github.com/bkad/CamelCaseMotion'
- Bundle 'https://github.com/Shougo/neocomplcache.vim'
- Bundle 'https://github.com/Raimondi/delimitMate'
- Bundle 'https://github.com/scrooloose/nerdtree'
- Bundle 'https://github.com/JarrodCTaylor/vim-256-color-schemes'
- Bundle 'https://github.com/tpope/vim-fugitive'
+ Plugin 'bkad/CamelCaseMotion'
+ Plugin 'Shougo/neocomplcache.vim'
+ Plugin 'Raimondi/delimitMate'
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'JarrodCTaylor/vim-256-color-schemes'
+ Plugin 'tpope/vim-fugitive'
  " Must have exuberant-ctags for tagbar to work
- Bundle 'https://github.com/majutsushi/tagbar'
- Bundle 'https://github.com/ervandew/supertab'
- Bundle 'https://github.com/pangloss/vim-javascript'
- Bundle 'https://github.com/Lokaltog/vim-easymotion'
- Bundle 'https://github.com/scrooloose/syntastic'
- Bundle 'https://github.com/kchmck/vim-coffee-script'
- Bundle 'https://github.com/kien/ctrlp.vim'
- Bundle 'https://github.com/tpope/vim-commentary'
- Bundle 'https://github.com/davidhalter/jedi-vim'
- Bundle 'https://github.com/mhinz/vim-startify'
- Bundle 'https://github.com/tpope/vim-surround'
- Bundle 'https://github.com/mustache/vim-mustache-handlebars'
- Bundle 'https://github.com/JarrodCTaylor/vim-python-test-runner'
- Bundle 'https://github.com/tpope/vim-rails'
- Bundle 'https://github.com/tmhedberg/SimpylFold'
- Bundle 'https://github.com/bling/vim-airline'
- Bundle 'https://github.com/JarrodCTaylor/vim-js2coffee'
- Bundle 'https://github.com/sjl/gundo.vim'
- Bundle 'https://github.com/nelstrom/vim-markdown-folding'
- Bundle 'https://github.com/tpope/vim-markdown'
- Bundle 'https://github.com/justinmk/vim-sneak'
- Bundle 'https://github.com/JarrodCTaylor/vim-shell-executor'
- Bundle 'https://github.com/epeli/slimux'
- Bundle 'https://github.com/JarrodCTaylor/vim-qunit-special-blend'
- Bundle 'https://github.com/mattn/emmet-vim/'
- Bundle 'https://github.com/osyo-manga/vim-over'
- Bundle 'https://github.com/groenewege/vim-less'
- Bundle 'https://github.com/nathanaelkane/vim-indent-guides'
+ Plugin 'majutsushi/tagbar'
+ Plugin 'ervandew/supertab'
+ Plugin 'pangloss/vim-javascript'
+ Plugin 'Lokaltog/vim-easymotion'
+ Plugin 'scrooloose/syntastic'
+ Plugin 'kchmck/vim-coffee-script'
+ Plugin 'kien/ctrlp.vim'
+ Plugin 'tpope/vim-commentary'
+ Plugin 'davidhalter/jedi-vim'
+ Plugin 'mhinz/vim-startify'
+ Plugin 'tpope/vim-surround'
+ Plugin 'mustache/vim-mustache-handlebars'
+ Plugin 'JarrodCTaylor/vim-python-test-runner'
+ Plugin 'tpope/vim-rails'
+ Plugin 'tmhedberg/SimpylFold'
+ Plugin 'bling/vim-airline'
+ Plugin 'JarrodCTaylor/vim-js2coffee'
+ Plugin 'sjl/gundo.vim'
+ Plugin 'nelstrom/vim-markdown-folding'
+ Plugin 'tpope/vim-markdown'
+ Plugin 'justinmk/vim-sneak'
+ Plugin 'JarrodCTaylor/vim-shell-executor'
+ Plugin 'epeli/slimux'
+ Plugin 'JarrodCTaylor/vim-qunit-special-blend'
+ Plugin 'https://github.com/mattn/emmet-vim/'
+ Plugin 'osyo-manga/vim-over'
+ Plugin 'groenewege/vim-less'
+ Plugin 'nathanaelkane/vim-indent-guides'
+ Plugin 'wellle/targets.vim'
 " }2
 " }1
 
