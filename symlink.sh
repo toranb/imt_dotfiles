@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ##
 # You must delete all existing *zsh*, *vim* and *tmux* files and directories
 # in your home folder for these new files to work
@@ -23,8 +25,11 @@ sudo rm -rf ~/.ackrc > /dev/null 2>&1
 sudo rm -rf ~/README > /dev/null 2>&1
 sudo rm -rf ~/.antigen > /dev/null 2>&1
 sudo rm -rf ~/.antigen.zsh > /dev/null 2>&1
-sudo rm -rf ~/.config > /dev/null 2>&1
+if [ "$(uname)" = "Darwin" ]; then
+    sudo rm -rf ~/.config > /dev/null 2>&1
+fi
 sudo rm -rf ~/.tigrc > /dev/null 2>&1
+sudo rm -rf ~/.psqlrc
 
 
 # Symlink the new config files. Assumes files are saved in ~/imt_dotfiles
@@ -32,6 +37,7 @@ ln -s ~/imt_dotfiles/vim ~/.vim
 ln -s ~/imt_dotfiles/vimrc ~/.vimrc
 if [ "$(uname)" = "Darwin" ]; then
     ln -s ~/imt_dotfiles/tmux/mac_tmux ~/.tmux
+    ln -s ~/imt_dotfiles/config ~/.config
 else
     ln -s ~/imt_dotfiles/tmux/linux_tmux ~/.tmux
 fi
@@ -39,7 +45,6 @@ ln -s ~/imt_dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/imt_dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/imt_dotfiles/ackrc ~/.ackrc
 ln -s ~/imt_dotfiles/gitconfig ~/.gitconfig
-ln -s ~/imt_dotfiles/config ~/.config
 ln -s ~/imt_dotfiles/gemrc ~/.gemrc
 ln -s ~/imt_dotfiles/psqlrc ~/.psqlrc
 ln -s ~/imt_dotfiles/tigrc ~/.tigrc
