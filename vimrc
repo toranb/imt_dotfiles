@@ -302,7 +302,7 @@ let g:ctrlp_max_height = 18
 let g:ctrlp_open_multiple_files = '1vjr'
 let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
 func! MyCtrlPMappings()
-    nnoremap <buffer> <silent> <c-@> :call <sid>DeleteBuffer()<cr>
+    nnoremap <buffer> <silent> <F6> :call <sid>DeleteBuffer()<cr>
 endfunc
 " }2
 " Exuberant ctags configurations {2
