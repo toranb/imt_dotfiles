@@ -49,11 +49,6 @@ ln -s ~/imt_dotfiles/gemrc ~/.gemrc
 ln -s ~/imt_dotfiles/psqlrc ~/.psqlrc
 ln -s ~/imt_dotfiles/tigrc ~/.tigrc
 
-# If vundle doesn't exist clone it so we can update vim plugins
-if [ ! -d ~/imt_dotfiles/vim/bundle/vundle ]; then
-    git clone https://github.com/gmarik/vundle.git ~/imt_dotfiles/vim/bundle/vundle
-fi
-
 echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
 if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
     echo -n "What is your git user name => "; read name

@@ -18,67 +18,73 @@
 set nocompatible
 " }
 
-" Vundle Package Management {1
-" Notes {2
-"===================================================================================
+" NeoBundle auto-installation and setup {{{1
+" Install and configure NeoBundle {{{2
+let iCanHazNeoBundle=1
+let neobundle_readme=expand($HOME.'/.vim/bundle/neobundle.vim/README.md')
+if !filereadable(neobundle_readme)
+    echo "Installing NeoBundle.."
+    echo ""
+    silent !mkdir -p $HOME/.vim/bundle
+    silent !git clone https://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+    let iCanHazNeoBundle=0
+endif
+
+" Call NeoBundle
+if has('vim_starting')
+    set rtp+=$HOME/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand($HOME.'/.vim/bundle/'))
+
+" NeoBundle rules NeoBundle (needed!)
+NeoBundle 'Shougo/neobundle.vim'
+" }}}2
 "
-" Help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install(update) plugins
-" :PluginSearch(!) foo - search(or refresh cache first) for foo
-" :PluginClean(!)      - confirm(or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-"===================================================================================
-" }2
-" Required for vundle to work {2
-"-----------------------------------------------------------------------------------
- filetype off
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
- Bundle 'gmarik/vundle'
-" }2
 " Github repos for plugins that we want to have installed {2
 "-----------------------------------------------------------------------------------
- Plugin 'bkad/CamelCaseMotion'
- Plugin 'Shougo/neocomplcache.vim'
- Plugin 'Raimondi/delimitMate'
- Plugin 'scrooloose/nerdtree'
- Plugin 'JarrodCTaylor/vim-256-color-schemes'
- Plugin 'tpope/vim-fugitive'
+ NeoBundle 'bkad/CamelCaseMotion'
+ NeoBundle 'Shougo/neocomplcache.vim'
+ NeoBundle 'Raimondi/delimitMate'
+ NeoBundle 'scrooloose/nerdtree'
+ NeoBundle 'JarrodCTaylor/vim-256-color-schemes'
+ NeoBundle 'tpope/vim-fugitive'
  " Must have exuberant-ctags for tagbar to work
- Plugin 'majutsushi/tagbar'
- Plugin 'ervandew/supertab'
- Plugin 'pangloss/vim-javascript'
- Plugin 'Lokaltog/vim-easymotion'
- Plugin 'scrooloose/syntastic'
- Plugin 'kchmck/vim-coffee-script'
- Plugin 'kien/ctrlp.vim'
- Plugin 'tpope/vim-commentary'
- Plugin 'davidhalter/jedi-vim'
- Plugin 'mhinz/vim-startify'
- Plugin 'tpope/vim-surround'
- Plugin 'mustache/vim-mustache-handlebars'
- Plugin 'JarrodCTaylor/vim-python-test-runner'
- Plugin 'tpope/vim-rails'
- Plugin 'tmhedberg/SimpylFold'
- Plugin 'bling/vim-airline'
- Plugin 'JarrodCTaylor/vim-js2coffee'
- Plugin 'sjl/gundo.vim'
- Plugin 'nelstrom/vim-markdown-folding'
- Plugin 'tpope/vim-markdown'
- Plugin 'justinmk/vim-sneak'
- Plugin 'JarrodCTaylor/vim-shell-executor'
- Plugin 'epeli/slimux'
- Plugin 'JarrodCTaylor/vim-qunit-special-blend'
- Plugin 'https://github.com/mattn/emmet-vim/'
- Plugin 'osyo-manga/vim-over'
- Plugin 'groenewege/vim-less'
- Plugin 'nathanaelkane/vim-indent-guides'
- Plugin 'wellle/targets.vim'
- Plugin 'tpope/vim-fireplace'
- Plugin 'kien/rainbow_parentheses.vim'
+ NeoBundle 'majutsushi/tagbar'
+ NeoBundle 'ervandew/supertab'
+ NeoBundle 'pangloss/vim-javascript'
+ NeoBundle 'Lokaltog/vim-easymotion'
+ NeoBundle 'scrooloose/syntastic'
+ NeoBundle 'kchmck/vim-coffee-script'
+ NeoBundle 'kien/ctrlp.vim'
+ NeoBundle 'tpope/vim-commentary'
+ NeoBundle 'davidhalter/jedi-vim'
+ NeoBundle 'mhinz/vim-startify'
+ NeoBundle 'tpope/vim-surround'
+ NeoBundle 'mustache/vim-mustache-handlebars'
+ NeoBundle 'JarrodCTaylor/vim-python-test-runner'
+ NeoBundle 'tpope/vim-rails'
+ NeoBundle 'tmhedberg/SimpylFold'
+ NeoBundle 'bling/vim-airline'
+ NeoBundle 'JarrodCTaylor/vim-js2coffee'
+ NeoBundle 'sjl/gundo.vim'
+ NeoBundle 'nelstrom/vim-markdown-folding'
+ NeoBundle 'tpope/vim-markdown'
+ NeoBundle 'justinmk/vim-sneak'
+ NeoBundle 'JarrodCTaylor/vim-shell-executor'
+ NeoBundle 'epeli/slimux'
+ NeoBundle 'JarrodCTaylor/vim-qunit-special-blend'
+ NeoBundle 'https://github.com/mattn/emmet-vim/'
+ NeoBundle 'osyo-manga/vim-over'
+ NeoBundle 'groenewege/vim-less'
+ NeoBundle 'nathanaelkane/vim-indent-guides'
+ NeoBundle 'wellle/targets.vim'
+ NeoBundle 'tpope/vim-fireplace'
+ NeoBundle 'kien/rainbow_parentheses.vim'
+ NeoBundle '~/imt_dotfiles/vim/my-plugins/nerd-ack', {'type': 'nosync'}
+ NeoBundle '~/imt_dotfiles/vim/my-plugins/tmux-navigator', {'type': 'nosync'}
+ NeoBundle '~/imt_dotfiles/vim/my-plugins/vim-ack', {'type': 'nosync'}
+ NeoBundle '~/imt_dotfiles/vim/my-plugins/vim-grep-quickfix', {'type': 'nosync'}
+ NeoBundle '~/imt_dotfiles/vim/my-plugins/vim-wiki-links', {'type': 'nosync'}
 " }2
 " }1
 
