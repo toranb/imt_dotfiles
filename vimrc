@@ -86,6 +86,19 @@ NeoBundle 'Shougo/neobundle.vim'
  NeoBundle '~/imt_dotfiles/vim/my-plugins/vim-grep-quickfix', {'type': 'nosync'}
  NeoBundle '~/imt_dotfiles/vim/my-plugins/vim-wiki-links', {'type': 'nosync'}
 " }2
+
+" Auto install the plugins {{{2
+
+" First-time plugins installation
+if iCanHazNeoBundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :NeoBundleInstall
+endif
+
+" Check if all of the plugins are already installed, in other case ask if we want to install them
+NeoBundleCheck
+" }}}2
 " }1
 
 " General Settings {1
