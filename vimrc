@@ -634,6 +634,8 @@ vmap <silent> <expr> p <sid>Repl()
 let mapleader=" "
 nnoremap j gj
 nnoremap k gk
+nnoremap <Leader>\ :vsplit<CR>
+nnoremap <Leader>- :split<CR>
 nnoremap <Leader>ff :CtrlP<CR>
 noremap <Leader>sp :set spell spelllang=en_us<CR>
 nnoremap <Leader>tb :TagbarToggle<CR>
